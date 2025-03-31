@@ -13,13 +13,6 @@ fn main() {
     }
 }
 
-/// Algorytm wzorowany jest na klasycznym podejściu:
-///   dfa[0][c] = 0 dla każdego znaku c,
-///   dfa[0][P[0]] = 1,
-///   dla j = 1..m-1:
-///       dla każdego c ∈ alfabet: dfa[j][c] = dfa[longest_prefix_sufix][c]
-///       dfa[j][P[j]] = j+1
-///       longest_prefix_sufix = dfa[longest_prefix_sufix][P[j]]
 fn build_dfs(pattern: &str) -> Vec<HashMap<char, usize>> {
     let m = pattern.len();
     let alphabet: HashSet<char> = pattern.chars().collect();

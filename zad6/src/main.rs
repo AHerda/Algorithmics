@@ -1,23 +1,10 @@
 fn main() {
-    let coefficients = vec![1.0, -3.0, 2.0]; // Coefficients for x^2 - 3x + 2
-    let x = 2_f64; // Point at which to evaluate the polynomial
+    let coefficients = vec![1.0, -3.0, 2.0];
+    let x = 2_f64;
     let result = horner(&coefficients, x);
     println!("The result of the polynomial evaluation is: {}", result);
 }
 
-/// Horner's method for polynomial evaluation
-///
-/// This function evaluates a polynomial at a given point using Horner's method.
-/// It takes a slice of coefficients and a value x, and returns the result of the polynomial.
-///
-/// # Arguments
-///
-/// * `coefficients` - A slice of f64 representing the coefficients of the polynomial.
-/// * `x` - A f64 value at which to evaluate the polynomial.
-///
-/// # Returns
-///
-/// * A f64 value representing the result of the polynomial evaluation.
 fn horner(coefficients: &[f64], x: f64) -> f64 {
     let mut result = coefficients[0];
 
@@ -66,12 +53,12 @@ mod tests {
     }
 
     fn polynomial(x: f64) -> f64 {
-        (x - 5.0)*(x + 7.0)*(x - 8.5)*(x + 0.5)
+        (x - 5.0) * (x + 7.0) * (x - 8.5) * (x + 0.5)
     }
 
     #[test]
     fn test_horner1() {
-        let coefficients = vec![1.0 , -6.0, -55.25, 271.5, 148.75]; // Coefficients for (x - 5)(x + 7)(x - 8.5)(x + 0.5) checked in wolfram alpha
+        let coefficients = vec![1.0, -6.0, -55.25, 271.5, 148.75]; // Coefficients for (x - 5)(x + 7)(x - 8.5)(x + 0.5) checked in wolfram alpha
 
         for x in -10..=10 {
             let x = x as f64;

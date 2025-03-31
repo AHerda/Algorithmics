@@ -1,4 +1,4 @@
-use std::hash::{Hash, DefaultHasher, Hasher};
+use std::hash::{DefaultHasher, Hash, Hasher};
 
 fn main() {
     let texts = vec!["ababcabcabababd", "ababcabcababab", "ababd"];
@@ -13,14 +13,6 @@ fn main() {
     }
 }
 
-//function RabinKarp(string s[1..n], string pattern[1..m])
-// hpattern := hash(pattern[1..m]);
-// for i from 1 to n-m+1
-//     hs := hash(s[i..i+m-1])
-//     if hs = hpattern
-//         if s[i..i+m-1] = pattern[1..m]
-//             return i
-// return not found
 fn rk(text: &str, pattern: &str) -> bool {
     let hpattern = hash(pattern);
     for i in 0..=text.len() - pattern.len() {
@@ -33,6 +25,8 @@ fn rk(text: &str, pattern: &str) -> bool {
     }
     false
 }
+
+//rolling hash dodaj
 
 fn hash(text: &str) -> u64 {
     let mut s = DefaultHasher::new();
