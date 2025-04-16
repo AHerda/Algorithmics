@@ -137,9 +137,9 @@ Gęstość prawdopodobieństwa:
 $ f_Y (y) = d / (d y) F_Y (y) = d / (d y) 2y - 1 = 2 \ arrow.b.double $
 Y ma rozkład jednostajny $=> E[Y] = 0.75$
 $
-  E[Y^2] = integral_(1 / 2)^1 y^2 dot f_Y (y) d y = integral_(1 / 2)^1 2y^2 d y = [2y^3 / 3]_(1 / 2)^1 = 2 / 3 - 2 dot 1 / 8 dot 1 / 3 = 16 / 24 - 2 / 24 = 14 / 24 = 7 / 12 \
+  E[Y^2] = integral_(1 / 2)^1 y^2 dot f_Y (y) d y = integral_(1 / 2)^1 2y^2 d y = [2y^3 / 3]_(1 / 2)^1 = 2 / 3 - 2 dot 1 / 8 dot 1 / 3 = 8 / 12 - 1 / 12 = 7 / 12 \
   arrow.b.double \
-  sigma_Y^2 = E[Y^2] - E[Y]^2 = 7 / 12 - (3 / 4)^2 = 18 / 48 - 27 / 48 = 1 / 48
+  sigma_Y^2 = E[Y^2] - E[Y]^2 = 7 / 12 - (3 / 4)^2 = 28 / 48 - 27 / 48 = 1 / 48
 $
 
 = Zadanie 17
