@@ -102,3 +102,19 @@ $
 $
 
 = Zadanie 29
+
+Niech $h_b (x)$ będzie funkcją skrótu zwracającą $b$-bitowe ciągi. Rozmiar przestrzeni obrazów funkcji $h_b (x)$ dla dowolnego $b$ wynosi:
+$ abs({y: h_b (x) = y}) = 2^b = m $
+Z poprzedniego zadania mamy wzór przybliżający wartość $n$  dla której prawdopodobieństwo kolizji wynosi conajmniej $1/2$: $ n approx sqrt(2m ln(2)) = sqrt(2 dot 2^b dot ln(2)) = 2^(b/2) dot sqrt(2ln(2)) $
+
+== Dla $b=64$
+
+$ n approx 2^(64 / 2) dot sqrt(2 ln(2)) = 2^32 sqrt(2 ln(2)) approx 5.05694 dot 10^9 $
+
+== Dla $b=128$
+
+$ n approx 2^(128 / 2) dot sqrt(2 ln(2)) = 2^64 sqrt(2 ln(2)) approx 2.17194 dot 10^19 $
+
+== Dla $b=256$
+
+$ n approx 2^(256 / 2) dot sqrt(2 ln(2)) = 2^128 sqrt(2 ln(2)) approx 4.00652 dot 10^38 $
