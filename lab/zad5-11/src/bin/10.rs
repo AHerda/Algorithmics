@@ -2,10 +2,11 @@ fn main() {
     println!("Hello, world!");
 }
 
-fn lcs_of_3(str1: &str, str2: &str, str3: &str) -> usize {
+fn lcs_of_3(str1: &str, str2: &str, str3: &str) -> String {
     let str1: Vec<char> = str1.chars().collect();
     let str2: Vec<char> = str2.chars().collect();
     let str3: Vec<char> = str3.chars().collect();
+
     let mut m = vec![vec![vec![0; str3.len() + 1]; str2.len() + 1]; str1.len() + 1];
 
     for i in 0..str1.len() {
@@ -20,7 +21,29 @@ fn lcs_of_3(str1: &str, str2: &str, str3: &str) -> usize {
             }
         }
     }
-    m[str1.len()][str2.len()][str3.len()]
+
+    let mut i = str1.len();
+    let mut j = str2.len();
+    let mut l = str3.len();
+    let mut lcs_chars = Vec::new();
+
+    while i > 0 && j > 0 && l > 0 {
+        if str1[i - 1] == str2[j - 1] && str1[i - 1] == str3[l - 1] {
+            lcs_chars.push(str1[i - 1]);
+            i -= 1;
+            j -= 1;
+            l -= 1;
+        } else if m[i - 1][j][l] >= m[i][j - 1][l] && m[i - 1][j][l] >= m[i][j][l - 1] {
+            i -= 1;
+        } else if m[i][j - 1][l] >= m[i - 1][j][l] && m[i][j - 1][l] >= m[i][j][l - 1] {
+            j -= 1;
+        } else {
+            l -= 1;
+        }
+    }
+
+    lcs_chars.reverse();
+    lcs_chars.iter().collect()
 }
 // dodaj backtrackong, odzyskiwanie
 
@@ -38,7 +61,7 @@ mod tests {
         let str2 = "abc";
         let str3 = "abc";
         let result = lcs_of_3(str1, str2, str3);
-        assert_eq!(result, 3);
+        assert_eq!(result, "abc");
     }
 
     #[test]
@@ -47,7 +70,7 @@ mod tests {
         let str2 = "";
         let str3 = "";
         let result = lcs_of_3(str1, str2, str3);
-        assert_eq!(result, 0);
+        assert_eq!(result, "");
     }
 
     #[test]
@@ -56,7 +79,7 @@ mod tests {
         let str2 = "def";
         let str3 = "ghi";
         let result = lcs_of_3(str1, str2, str3);
-        assert_eq!(result, 0);
+        assert_eq!(result, "");
     }
 
     #[test]
@@ -65,6 +88,6 @@ mod tests {
         let str2 = "bbbbbbbbbbaaaac";
         let str3 = "ccccccccccccbbbbbbbbbbbbbaaaa";
         let result = lcs_of_3(str1, str2, str3);
-        assert_eq!(result, 4);
+        assert_eq!(result, "aaaa");
     }
 }
