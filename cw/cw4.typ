@@ -1,19 +1,18 @@
-#align(top + center)[
-  #text(size: 24pt, [Algorytmika \ Ćwiczenia 4])
+#import "template.typ": *
 
-  *Adrian Herda*
-
-  #datetime.today().display()
-]
-
-#set heading(numbering: "1.")
-#show heading: set block(below: 1em, above: 2em)
-#show figure: set block(below: 2em, above: 1em)
-#set text(lang: "pl")
-#set par(
-  // first-line-indent: 2em,
-  spacing: 0.8em,
-  justify: true
+// Take a look at the file `template.typ` in the file panel
+// to customize this template and discover how it works.
+#show: project.with(
+  title: [Algorytmika\ Ćwiczenia 7],
+  authors: (
+    (name: "Adrian Herda", affiliation: "Informatyka Algorytmiczna, Politechnika Wrocławska"),
+  ),
+  // Insert your abstract after the colon, wrapped in brackets.
+  // Example: `abstract: [This is my abstract...]`
+  abstract-pl: none, // also can be none
+  abstract-en: none, // also can be none
+  date: "May 7, 2025",
+  content: false,
 )
 
 = Zadanie 18

@@ -5,7 +5,7 @@
   authors: (
     ( name: "Adrian Herda", affiliation: "Politechnika Wrocławska" ),
   ),
-  date: datetime.today().display("[year]/[month]/[day]"),
+  date: "May 28, 2025",
 )
 
 = Zadanie 27
