@@ -4,6 +4,9 @@
 #import "cw6.typ"
 #import "cw7.typ"
 
+#outline()
+#pagebreak()
+
 #cw3
 #cw4
 #cw5
