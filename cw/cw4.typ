@@ -51,7 +51,7 @@ $
   Pr[f(zeta_1) = dots.c = f(zeta_40) = 0] = Pr[f(zeta_1) = 0] dot dots. dot Pr[f(zeta_40) = 0] lt.eq (1 / 2)^(40) < 10^(-12)
 $
 
-== Zadanie 21
+= Zadanie 21
 
 Rzucamy igłę długości $l$ na płaszczyznę z pionowymi liniami równoległymi w odległościach $k = 1$.
 

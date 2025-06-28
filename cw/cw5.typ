@@ -6,7 +6,7 @@
   #datetime.today().display()
 ]
 
-//#set heading(numbering: " ")
+#set heading(numbering: "1.1. ")
 #show heading: set block(below: 1em, above: 2em)
 #show figure: set block(below: 2em, above: 1em)
 #set text(lang: "pl")
